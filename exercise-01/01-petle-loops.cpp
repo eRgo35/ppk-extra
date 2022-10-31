@@ -73,7 +73,8 @@ int main()
       {
         std::cout << "X";
       }
-      else {
+      else
+      {
         std::cout << ".";
       }
     }
@@ -111,7 +112,8 @@ int main()
       {
         std::cout << "X";
       }
-      else {
+      else
+      {
         std::cout << ".";
       }
     }
@@ -149,7 +151,8 @@ int main()
       {
         std::cout << "X";
       }
-      else {
+      else
+      {
         std::cout << ".";
       }
     }
@@ -178,7 +181,7 @@ int main()
 
   */
 
- for (int r = 0; r < n; r++)
+  for (int r = 0; r < n; r++)
   {
     for (int c = 0; c < n; c++)
     {
@@ -186,7 +189,8 @@ int main()
       {
         std::cout << "X";
       }
-      else {
+      else
+      {
         std::cout << ".";
       }
     }
@@ -216,7 +220,7 @@ int main()
 
   */
 
- for (int r = 0; r < n; r++)
+  for (int r = 0; r < n; r++)
   {
     for (int c = 0; c < n; c++)
     {
@@ -224,7 +228,8 @@ int main()
       {
         std::cout << "X";
       }
-      else {
+      else
+      {
         std::cout << ".";
       }
     }
@@ -254,7 +259,7 @@ int main()
 
   */
 
- for (int r = 0; r < n; r++)
+  for (int r = 0; r < n; r++)
   {
     for (int c = 0; c < n; c++)
     {
@@ -262,7 +267,8 @@ int main()
       {
         std::cout << "X";
       }
-      else {
+      else
+      {
         std::cout << ".";
       }
     }
@@ -291,11 +297,11 @@ int main()
 
   */
 
-for (int r = 0; r < n; r++)
+  for (int r = 0; r < n; r++)
   {
     for (int c = 0; c < n; c++)
     {
-      if (r == 0 || r == (n - 1) || (r == 1 && c > 0 && c < (n - 1)) || (r == (n - 2) && c > 0 && c < (n - 1)) || (r == 2 && c > 1 && c < (n - 2)) || (r == (n - 3) && c > 1 && c < (n - 2)) || (r == 3 && c > 2 && c < (n - 3)) || (r == (n - 4) && c > 2 && c < (n - 3)) || (r == 4 && c > 3 && c < (n - 4)) || (r == (n - 5) && c > 3 && c < (n - 4)))
+      if ((r <= c && r <= n - c - 1) || (r >= c && r >= n - c - 1))
       {
         std::cout << "X";
       }
@@ -329,7 +335,7 @@ for (int r = 0; r < n; r++)
 
   */
 
- for (int r = 0; r < n; r++)
+  for (int r = 0; r < n; r++)
   {
     for (int c = 0; c < n; c++)
     {
@@ -337,7 +343,8 @@ for (int r = 0; r < n; r++)
       {
         std::cout << "X";
       }
-      else {
+      else
+      {
         std::cout << ".";
       }
     }
@@ -366,7 +373,7 @@ for (int r = 0; r < n; r++)
 
   */
 
- for (int r = 0; r < n; r++)
+  for (int r = 0; r < n; r++)
   {
     for (int c = 0; c < n; c++)
     {
@@ -374,7 +381,8 @@ for (int r = 0; r < n; r++)
       {
         std::cout << "X";
       }
-      else {
+      else
+      {
         std::cout << ".";
       }
     }
@@ -403,29 +411,38 @@ for (int r = 0; r < n; r++)
 
   */
 
-   for (int r = 0; r < n; r++)
+  for (int r = 0; r < n; r++)
   {
     for (int c = 0; c < n; c++)
     {
-      for (int i = 0; i < n; i+=2)
+      if (r <= c && r <= n - c - 1)
       {
-        if (r == i || r == (n - i - 1)) // || c == 0 || c == (n - 1))
-        {
+        if (r % 2 == 0)
           std::cout << "X";
-        }
-        else 
-        {
-          break;
-        }
+        else
+          std::cout << ".";
       }
-      // if (r == 0 || r == (n - 1) || c == 0 || c == (n - 1) || (r == 2 && c > 1 && c < (n - 2)) || (r == (n - 3) && c > 1 && c < (n - 2)) || (r == (n - 5) && c > 3 && c < (n - 4)) || (r == (n - 6) && c > 3 && c < (n - 4)) || ((c == 2) && r > 1 && r < (n - 2)) || ((c == (n - 3) && r > 1 && r < (n - 2))))
-      // {
-      //   std::cout << "X";
-      // }
-      // else
-      // {
-      //   std::cout << " ";
-      // }
+      else if (r >= c && r >= n - c - 1)
+      {
+        if ((n - r) % 2 == 1)
+          std::cout << "X";
+        else
+          std::cout << ".";
+      }
+      else if (r <= c && r >= n - c - 1)
+      {
+        if ((n - c) % 2 == 1)
+          std::cout << "X";
+        else
+          std::cout << ".";
+      }
+      else
+      {
+        if (c % 2 == 0)
+          std::cout << "X";
+        else
+          std::cout << ".";
+      }
     }
     std::cout << std::endl;
   }
@@ -433,4 +450,4 @@ for (int r = 0; r < n; r++)
   std::cout << std::endl;
 }
 
-// finis
+// finish
