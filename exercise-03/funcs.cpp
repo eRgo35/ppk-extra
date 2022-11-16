@@ -1,5 +1,6 @@
 #include <iostream>
 #include <random>
+#include <cmath>
 #include "defs.h"
 
 void hello_world()
@@ -128,14 +129,13 @@ int Round(const double d)
   return base;
 }
 
-//TODO
 std::vector<int> Round(const std::vector<double> &w)
 {
   std::vector<int> rounded;
-  for (int i : w)
+  for (int i = 0; i < w.size(); i++)
   {
-    int base = i;
-    double rest = i - (double)base;
+    int base = w.at(i);
+    double rest = fabs(base - w.at(i));
 
     if (rest >= 0.5)
       if (base >= 0)
@@ -156,14 +156,14 @@ void print(const std::vector<int> &w)
   std::cout << "]" << std::endl;
 }
 
-//TODO 
 std::vector<int> unique(const std::vector<int> &w)
 {
   std::vector<int> tmp;
   for (int i = 1; i < w.size(); i++)
-  {
     if (w.at(i - 1) != w.at(i))
       tmp.push_back(w.at(i - 1));
-  }
+
+  tmp.push_back(w.at(w.size() - 1));
+
   return tmp;
 }
