@@ -112,8 +112,17 @@ int main()
   std::cout << "[PL] Proszę dodać objąć dotychczasowy kod pętlą w ten sposób, żeby w j-tej iteracji wyszukiwać minimum w tablicy od pozycji j-tej do końca, a następnie zamieni miejscami znalezione minimum z zawartością komórki j-tej. W ten sposób uzyskamy algorytm sortowania." << std::endl;
   std::cout << "[EN] Put the code above into a loop so that in the j-th iteration the minimum is searched for from the j-th cell up to the end of the array. Then swap the minimum with the j-th cell. This produced a simple sorting algorithm." << std::endl;
 
-  // TODO
+  for (int i = 0; i < N; i++)
+  {
+    first = arr[i];
+    arr[i] = min;
+    arr[min_pos] = first;
+  }
 
+  for (int i = 0; i < N; i++)
+    std::cout << arr[i] << " ";
+  std::cout << std::endl;
+  return 0;
   ///////////////////////////////////////
   std::cout << std::endl;
   std::cout << "========================" << std::endl;
@@ -224,7 +233,6 @@ int main()
 10  14  19  24  29  33  36  38  
 15  20  25  30  34  37  39  40 
 )" << std::endl;
-
 
   // TODO, I give up here :P
 
